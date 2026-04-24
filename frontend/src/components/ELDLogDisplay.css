@@ -1,0 +1,182 @@
+.eld-log-container {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-height: 800px;
+  overflow-y: auto;
+}
+
+.eld-log-container h2 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.4em;
+  border-bottom: 2px solid #667eea;
+  padding-bottom: 10px;
+}
+
+.log-stats {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 6px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.stat-label {
+  font-size: 0.85em;
+  color: #666;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.3em;
+  color: #667eea;
+  font-weight: 700;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #eee;
+}
+
+.tab-btn {
+  padding: 10px 20px;
+  background: none;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  color: #666;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+  font-weight: 600;
+}
+
+.tab-btn:hover {
+  color: #667eea;
+}
+
+.tab-btn.active {
+  color: #667eea;
+  border-bottom-color: #667eea;
+}
+
+.timeline-view {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.legend {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 6px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.log-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.log-entry {
+  border-left: 4px solid #667eea;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.log-entry:hover {
+  background: #f0f0f0;
+  transform: translateX(4px);
+}
+
+.entry-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.status-badge {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.85em;
+  font-weight: 600;
+}
+
+.entry-time {
+  font-size: 0.9em;
+  color: #666;
+}
+
+.entry-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+
+.detail-label {
+  color: #666;
+  font-weight: 600;
+}
+
+.detail-value {
+  color: #333;
+}
+
+.no-logs {
+  text-align: center;
+  color: #999;
+  padding: 20px;
+  font-style: italic;
+}
+
+.logsheet-view {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.log-canvas {
+  max-width: 100%;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+}
