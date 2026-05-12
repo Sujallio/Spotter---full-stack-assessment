@@ -83,6 +83,7 @@ function ELDLogDisplay({ logs, trip }) {
     ctx.fillText(`Trip: ${trip.pickup_location} → ${trip.dropoff_location}`, 20, height - 10);
   }, [logs, statusLabels, statusColors, trip]);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (activeTab === 'logsheet' && logs.length > 0) {
       drawLogSheet();
