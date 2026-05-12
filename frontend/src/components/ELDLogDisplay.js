@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useCallback } from 'react';
 import './ELDLogDisplay.css';
 
 function ELDLogDisplay({ logs, trip }) {
@@ -19,13 +19,7 @@ function ELDLogDisplay({ logs, trip }) {
     'ON': 'On Duty',
   };
 
-  useEffect(() => {
-    if (activeTab === 'logsheet' && logs.length > 0) {
-      drawLogSheet();
-    }
-  }, [activeTab, logs]);
-
-  const drawLogSheet = () => {
+  const drawLogSheet = useCallback(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -87,7 +81,13 @@ function ELDLogDisplay({ logs, trip }) {
     ctx.fillStyle = '#666';
     ctx.font = '10px Arial';
     ctx.fillText(`Trip: ${trip.pickup_location} → ${trip.dropoff_location}`, 20, height - 10);
-  };
+  }, [logs, statusLabels, statusColors, trip]);
+
+  useEffect(() => {
+    if (activeTab === 'logsheet' && logs.length > 0) {
+      drawLogSheet();
+    }
+  }, [activeTab, logs, drawLogSheet]);
 
   const totalDrivingHours = logs
     .filter(log => log.status === 'DRIVING')
