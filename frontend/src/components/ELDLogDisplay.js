@@ -51,7 +51,7 @@ function ELDLogDisplay({ logs, trip }) {
     const entryHeight = 100;
     let yPos = 150;
 
-    logs.slice(0, 5).forEach((log, idx) => {
+    logs.slice(0, 5).forEach((log) => {
       const startTime = new Date(log.start_time);
       const endTime = new Date(log.end_time);
       
@@ -83,12 +83,11 @@ function ELDLogDisplay({ logs, trip }) {
     ctx.fillText(`Trip: ${trip.pickup_location} → ${trip.dropoff_location}`, 20, height - 10);
   }, [logs, statusLabels, statusColors, trip]);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (activeTab === 'logsheet' && logs.length > 0) {
       drawLogSheet();
     }
-  }, [activeTab, logs, drawLogSheet]);
+  }, [activeTab, logs, statusLabels, statusColors, trip]);
 
   const totalDrivingHours = logs
     .filter(log => log.status === 'DRIVING')
